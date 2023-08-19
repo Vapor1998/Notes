@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('background-image.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-bar {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .file-input {
+      display: block;
+      margin: 20px auto;
+    }
+
+    .submit-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+    <title>Input Form</title>
+</head>
+<body>
+    <form action="{{ url_for('output') }}" class="input-bar" method="post" enctype="multipart/form-data">
+        <label for="data"><h3>Enter Product Name and other Information to Scrape Review:</h3></label>
+        <br><br>
+        <input type="text" class = 'input-bar' name="data1" id="data1">
+        <input type="text" class = 'input-bar' name="data2" id = 'data2'>
+        <input type="text" class = 'input-bar' name="data3" id = 'data3'>
+
+       <!--- <input type="text" name="data4" id = 'data4'> --->
+        <!--- <form action= "{{ url_for('output') }}" method="post" enctype="multipart/form-data"> --->
+        <h4>Or</h4>
+        <h3>Upload a CSV File:</h3>
+        <input type="file" class = 'file-input' name="file"><br><br>
+            <input type="submit" class = 'submit-button' value="Submit">
+        <!--- </form> --->
+    </form>
+</body>
+</html>
